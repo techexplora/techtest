@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent { //implements UserInterface {//, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -38,7 +38,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->password;
 	}
-
+	
 	/**
 	 * Get the e-mail address where password reminders are sent.
 	 *
@@ -49,4 +49,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+
+	protected $guarded = array();
+/*
+	public function getRememberToken() 
+	{
+	}
+	public function setRememberToken($value)
+	{
+	}
+	public function getRememberTokenName()
+	{
+	}
+*/	
 }
